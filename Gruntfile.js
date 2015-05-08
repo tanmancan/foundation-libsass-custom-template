@@ -88,7 +88,7 @@ module.exports = function(grunt) {
                 tasks: ['sass:development']
             },
             other: {
-                files: ['*.html', '*.htm', 'javascript/*.js']
+                files: ['*.html', '*.htm', 'javascript/*.js', 'javascript/*/*.js']
             },
             // Live reload on file changes
             options: { 
