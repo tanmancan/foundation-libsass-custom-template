@@ -96,6 +96,6 @@ module.exports = function(grunt) {
     //Default task(s)
     grunt.registerTask('livereload', ['watch']);
     grunt.registerTask('checkjs', ['jshint']);
-    grunt.registerTask('setup', ['copy', 'sass'])
+    grunt.registerTask('setup', ['copy', 'sass', 'uglify'])
     grunt.registerTask('default', ['uglify', 'sass']);
 };
