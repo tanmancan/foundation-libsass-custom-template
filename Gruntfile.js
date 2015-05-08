@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                     sourceMap: false
                 },
                 files: { 
-                    'css/*.min.css': 'scss/*.scss' 
+                    'css/stylesheet.min.css': 'scss/stylesheet.scss' 
                 }
             },
             // Development
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                     sourceMap: true
             	},
             	files: {
-                    'css/*.css': 'scss/*.scss' 
+                    'css/stylesheet.css': 'scss/stylesheet.scss' 
             	}
             }
         },
