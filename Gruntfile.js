@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Initial setup - copy required scripts and files from bower_compoments into project directory
+        // Initial setup - copy required scripts and sass files from bower_compoments into project directory
         copy: {
             javascript: {
                 files: [
@@ -15,7 +15,11 @@ module.exports = function(grunt) {
                         expand: true, 
                         flatten: true,
                         cwd: 'bower_components/', 
-                        src: ['modernizr/modernizr.js', 'jquery/dist/jquery.min.js', 'foundation/js/foundation.min.js'], 
+                        src: [
+                            'modernizr/modernizr.js', 
+                            'jquery/dist/jquery.min.js', 
+                            'jquery/dist/jquery.min.map', 
+                            'foundation/js/foundation.min.js'], 
                         dest: 'javascript/'
                     },
                 ],
