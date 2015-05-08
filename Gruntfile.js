@@ -13,8 +13,9 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true, 
+                        flatten: true,
                         cwd: 'bower_components/', 
-                        src: ['/modernizr/modernizr.js', 'jquery/dist/jquery.min.js', 'foundation/js/foundation.min.js'], 
+                        src: ['modernizr/modernizr.js', 'jquery/dist/jquery.min.js', 'foundation/js/foundation.min.js'], 
                         dest: 'javascript/'
                     },
                 ],
@@ -23,9 +24,10 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
+                        flatten: true, 
                         cwd: 'bower_components/foundation/scss/',
                         src: ['foundation/_settings.scss'],
-                        dest: ['scss/']
+                        dest: 'scss/'
                     },
                 ],
             },
@@ -94,6 +96,6 @@ module.exports = function(grunt) {
     //Default task(s)
     grunt.registerTask('livereload', ['watch']);
     grunt.registerTask('checkjs', ['jshint']);
-    grunt.registerTask('initial-setup', ['copy', 'sass'])
+    grunt.registerTask('setup', ['copy', 'sass'])
     grunt.registerTask('default', ['uglify', 'sass']);
 };
