@@ -6,10 +6,34 @@ module.exports = function(grunt) {
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        // Initial setup - copy required scripts and files from bower_compoments into project directory
+        copy: {
+            javascript: {
+                files: [
+                    {
+                        expand: true, 
+                        cwd: 'bower_components/', 
+                        src: ['/modernizr/modernizr.js', 'jquery/dist/jquery.min.js', 'foundation/js/foundation.min.js'], 
+                        dest: 'javascript/'
+                    },
+                ],
+            },
+            sass: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/foundation/scss/',
+                        src: ['foundation/_settings.scss'],
+                        dest: ['scss/']
+                    },
+                ],
+            },
+        },
         
         // Javascript linter
         jshint: {
-            all: ['Gruntfile.js', '*.js']
+            all: ['Gruntfile.js', 'javascript/*.js']
         },
 
         // Minify scripts
@@ -17,9 +41,9 @@ module.exports = function(grunt) {
             options: {
             	mangle: false
             },
-            main: {
+            app: {
                 files: {
-                    '*.min.js': ['*.js']
+                    'javascript/app.min.js': ['javascript/app.js']
                 }
             }
         },
@@ -54,11 +78,11 @@ module.exports = function(grunt) {
         // Watch and live reload
         watch: {
             sass: {
-                files: ['*.scss'],
+                files: ['scss/*.scss', 'scss/*/*.scss'],
                 tasks: ['sass:development']
             },
             other: {
-                files: ['*.html', '*.htm', '*.js']
+                files: ['*.html', '*.htm', 'javascript/*.js']
             },
             // Live reload on file changes
             options: { 
@@ -70,5 +94,6 @@ module.exports = function(grunt) {
     //Default task(s)
     grunt.registerTask('livereload', ['watch']);
     grunt.registerTask('checkjs', ['jshint']);
+    grunt.registerTask('initial-setup', ['copy', 'sass'])
     grunt.registerTask('default', ['uglify', 'sass']);
 };

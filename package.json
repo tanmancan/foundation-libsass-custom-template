@@ -1,7 +1,7 @@
 {
   "name": "foundation-libsass-custom-template",
   "version": "1.0.0",
-  "description": "Starter grunt tasks and plugins for foundation libsass tempalte",
+  "description": "Starter grunt tasks and plugins for foundation libsass template",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt-cli": "^0.1.13"
@@ -9,6 +9,7 @@
   "devDependencies": {
     "node-sass": "~2.0.1",
     "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
@@ -17,7 +18,15 @@
   },
   "author": "Tanveer Karim",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanmancan/foundation-libsass-custom-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tanmancan/foundation-libsass-custom-template/issues"
+  },
+  "homepage": "https://github.com/tanmancan/foundation-libsass-custom-template",
   "scripts": {
-    "postinstall": "bower install && grunt"
+    "postinstall": "bower install && grunt setup"
   }
 }
