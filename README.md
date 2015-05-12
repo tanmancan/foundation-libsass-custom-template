@@ -9,28 +9,44 @@ Customized grunt setup using foundation-libsass-template
 
 1. Clone or fork this project or [download latest version here](https://github.com/tanmancan/foundation-libsass-custom-template/releases/latest) and extract zip
 
+	```shell
+	$ git clone git@github.com:tanmancan/foundation-libsass-custom-template.git
+	```
+	
 2. Navigation to project directory:
 
-	`$ cd /path/to/project/foundation-libsass-custom-template/`
+	```shell
+	$ cd /path/to/project/foundation-libsass-custom-template/
+	```
 
 3. Run install scripts:
 
-	`$ npm install`
+	```shell
+	$ npm install
+	```
 
 **Usage:**
 
 Mifiny javascript and sass files:
 
-	$ grunt
-
+```shell
+$ grunt
+```
+	
 Check javascript for errors with jshint
 
-	$ grunt checkjs
+```shell
+$ grunt checkjs
+```
 
 Livereload plugin:
 	
-	// Add script to bottom of html page
-	<script src="//localhost:35729/livereload.js"></script>
+```javascript
+// Add script to bottom of html page
+<script src="//localhost:35729/livereload.js"></script>
+```
 
-	// Run livereload
-	$ grunt livereload
+```shell
+# Run livereload
+$ grunt livereload
+```
