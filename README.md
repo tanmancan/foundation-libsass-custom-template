@@ -13,7 +13,7 @@ Customized grunt setup using foundation-libsass-template
 	$ git clone git@github.com:tanmancan/foundation-libsass-custom-template.git
 	```
 	
-2. Navigation to project directory:
+2. Navigate to the project directory:
 
 	```shell
 	$ cd /path/to/project/foundation-libsass-custom-template/
@@ -27,7 +27,7 @@ Customized grunt setup using foundation-libsass-template
 
 **Usage:**
 
-Mifiny javascript and sass files:
+Minify javascript and sass files:
 
 ```shell
 $ grunt
